@@ -1,6 +1,6 @@
 ## Caching the Inverse of a Vector
 ## Below are two functions that are used to create a
-## special object that stores a numeric vector and caches its inverse.
+## special object that stores a matrix and caches its inverse.
 
 ## This functioncreates a special "matrix" object that can cache 
 ## its inverse.
@@ -19,13 +19,13 @@ makeCacheMatrix <- function(x = matrix()) {
     inv <<- NULL
   }
   
-  get <- function() x                              ## Function to return the value of the matrix argument (x)
+  get <- function() x                              ## Function to return the value of the matrix argument
   setinverse <- function(inverse) inv <<- inverse  ## assign value to inv in this environment
   getinverse <- function() inv                     ## returns the value of inv
   
   list(set = set, get = get,  ## create a list of the above functions
-       setmean = setmean,
-       getmean = getmean)
+       setinverse = setinverse,
+       getinverse = getinverse)
 
 }
 
